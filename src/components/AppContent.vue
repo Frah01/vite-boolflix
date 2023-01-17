@@ -13,6 +13,14 @@ export default {
             inputText: '',
         }
     },
+    methods: {
+        search(input) {
+            let apiCall = store.apiMovie + input;
+            axios.get(apiCall).then((response) => {
+                store.movieArray = response.data.results
+            })
+        }
+    }
    
 }
 </script>
@@ -25,10 +33,10 @@ export default {
             </div>
         </div>
         <div class="mb-5">
-             {{ store.movieArr.length }} film trovati
+             {{ store.movieArray.length }} film trovati
         </div>
         <div class="row row-cols-5 gap-5 justify-content-between">
-            <AppSingleCard v-for="(item, index) in store.movieArr" :key="index" :movie="item" />
+            <AppCard v-for="(item, index) in store.movieArr" :key="index" :movie="item" />
         </div>
     </div>
 </template>
