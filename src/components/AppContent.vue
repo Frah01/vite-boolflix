@@ -15,8 +15,8 @@ export default {
     },
     methods: {
         search(input) {
-            let apiCall = store.apiMovie + input;
-            axios.get(apiCall).then((response) => {
+            let apiMovie = store.apiMovie + input;
+            axios.get(apiMovie).then((response) => {
                 store.movieArray = response.data.results
             })
         }
