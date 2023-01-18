@@ -97,9 +97,16 @@ export default {
  .card-container{
   width: calc(100% / 5);
   background-color: white;
+  padding: 1px;
+  
   .card-body{
     display: none;
   }
+
+  .card-img {
+    width: 100%;
+  }
+
   &:hover{
     .card-body{
       display: block;
