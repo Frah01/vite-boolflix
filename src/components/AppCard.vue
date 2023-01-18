@@ -88,7 +88,7 @@ export default {
       <i v-for="star in stelleVuote" class="fa-regular fa-star"></i>
     </p>
     <p class="card-text">Lingua: {{ info.original_language }}</p>
-    <img :src="`https://www.countryflagicons.com/FLAT/64/${Flags(info)}.png`">
+    <img :alt="`${info.original_language}`" :src="`https://unpkg.com/language-icons/icons/${info.original_language}.svg`">
   </div>
 </div>
 </template>
