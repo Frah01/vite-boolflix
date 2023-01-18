@@ -36,7 +36,7 @@ export default {
              {{ store.movieArray.length }} film trovati
         </div>
         <div class="row row-cols-5 gap-5 justify-content-between">
-            <AppCard v-for="(item, index) in store.movieArray" :key="index" :movie="item" />
+            <AppCard v-for="(item, index) in store.movieArray" :key="index" :info="item" />
         </div>
     </div>
 </template>
