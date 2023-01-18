@@ -77,30 +77,38 @@ export default {
 </script>
 
 <template lang="">
-
 <div class="card-container" >
   <img class="card-img" :src="Image(info)" :alt="title(info)">
   <div class="card-body">
     <h5 class="card-title">{{ title(info) }}</h5>
     <p class="card-text">Titolo Originale: {{  originalTitle(info) }}</p>
     <p class="card-text">Voto:  
-      <i v-for="star in stelle" class="fa-solid fa-star"></i>
-      <i v-for="star in stelleVuote" class="fa-regular fa-star"></i>
+      <i v-for="star in stelle" class="fa-solid fa-star stars-color"></i>
+      <i v-for="star in stelleVuote" class="fa-regular fa-star stars-empty-color"></i>
     </p>
     <p class="card-text">Lingua: {{ info.original_language }}</p>
-    <img :alt="`${info.original_language}`" :src="`https://unpkg.com/language-icons/icons/${info.original_language}.svg`">
+    <img  :alt="`${info.original_language}`" :src="`https://unpkg.com/language-icons/icons/${info.original_language}.svg`">
   </div>
 </div>
 </template>
 
 <style lang="scss" scoped>
+
+@use '../styles/general.scss' as*;
  .card-container{
-  width: calc(100% / 5);
   background-color: white;
   padding: 1px;
-  
   .card-body{
+    padding: 20px;
+    height: 100%;
     display: none;
+  }
+  .stars-color {
+    color: orange;
+  }
+
+  .stars-empty-color {
+    color: rgb(172, 172, 172);
   }
 
   .card-img {
