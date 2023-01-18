@@ -65,6 +65,13 @@ export default {
       }
       return stelle;
     },
+    stelleVuote() {
+      let stelleVuote = [];
+      for (let i = 0; i < 5 -(Math.round(this.info.vote_average / 2)) ; i++) {
+        stelleVuote.push(i)
+      }
+      return stelleVuote;
+    },
   }
 }
 </script>
@@ -78,7 +85,7 @@ export default {
     <p class="card-text">Titolo Originale: {{  originalTitle(info) }}</p>
     <p class="card-text">Voto:  
       <i v-for="star in stelle" class="fa-solid fa-star"></i>
-      <i v-for="star in stelle" class="fa-regular fa-star"></i>
+      <i v-for="star in stelleVuote" class="fa-regular fa-star"></i>
     </p>
     <p class="card-text">Lingua: {{ info.original_language }}</p>
     <img :src="`https://www.countryflagicons.com/FLAT/64/${Flags(info)}.png`">
