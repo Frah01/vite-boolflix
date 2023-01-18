@@ -36,24 +36,6 @@ export default {
         return `https://www.emugifs.net/wp-content/uploads/2021/07/Eh-Volevi-GIF-Zeb89-MEME-Reazione-Divertente-dello-YouTuber-Italiano-da-Usare-nei-Commenti-ai-Post-di-Facebook-o-nei-Gruppi-WhatsApp-Scarica-Gratis-e-Condividi.gif`
       }
     },
-    Flags(value) {
-      let lang = '';
-      if (value.original_language) {
-        switch (value.original_language) {
-          default:
-            lang = (value.original_language)
-            break;
-          case 'en':
-            lang = 'gb'
-            break;
-          case 'ja':
-            lang = 'jp'
-            break;
-        }
-        let urlFlag = lang.toUpperCase()
-        return urlFlag
-      }
-    },
   },
     computed: {
     stelle() {
@@ -86,8 +68,9 @@ export default {
       <i v-for="star in stelle" class="fa-solid fa-star stars-color"></i>
       <i v-for="star in stelleVuote" class="fa-regular fa-star stars-empty-color"></i>
     </p>
-    <p class="card-text">Lingua: {{ info.original_language }}</p>
-    <img  :alt="`${info.original_language}`" :src="`https://unpkg.com/language-icons/icons/${info.original_language}.svg`">
+    <p class="card-text">Lingua: {{ info.original_language.toUpperCase() }}</p>
+    <p class="card-text">Overview: {{ info.overview }}</p>
+    <img class="language"  :alt="`${info.original_language}`" :src="`https://unpkg.com/language-icons/icons/${info.original_language}.svg`">
   </div>
 </div>
 </template>
@@ -118,9 +101,16 @@ export default {
   &:hover{
     .card-body{
       display: block;
+      background-color: rgba(0,0,0,);
+      color: white;
     }
     img{
       display: none;
+    }
+
+    .language{
+      display: block;
+      width: 50px
     }
   }
  }
