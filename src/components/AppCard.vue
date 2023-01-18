@@ -78,8 +78,8 @@ export default {
 
 <template lang="">
 
-<div class="card" >
-  <img class="card-img-top" :src="Image(info)" :alt="title(info)">
+<div class="card-container" >
+  <img class="card-img" :src="Image(info)" :alt="title(info)">
   <div class="card-body">
     <h5 class="card-title">{{ title(info) }}</h5>
     <p class="card-text">Titolo Originale: {{  originalTitle(info) }}</p>
@@ -94,5 +94,19 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+ .card-container{
+  width: calc(100% / 5);
+  background-color: white;
+  .card-body{
+    display: none;
+  }
+  &:hover{
+    .card-body{
+      display: block;
+    }
+    img{
+      display: none;
+    }
+  }
+ }
 </style>
