@@ -36,9 +36,27 @@ export default {
         return `https://www.emugifs.net/wp-content/uploads/2021/07/Eh-Volevi-GIF-Zeb89-MEME-Reazione-Divertente-dello-YouTuber-Italiano-da-Usare-nei-Commenti-ai-Post-di-Facebook-o-nei-Gruppi-WhatsApp-Scarica-Gratis-e-Condividi.gif`
       }
     },
+    Flags(value) {
+      let lang = '';
+      if (value.original_language) {
+        switch (value.original_language) {
+          default:
+            lang = (value.original_language)
+            break;
+          case 'en':
+            lang = 'gb'
+            break;
+          case 'ja':
+            lang = 'jp'
+            break;
+        }
+        let urlFlag = lang.toUpperCase()
+        return urlFlag
+      }
+    },
   },
     computed: {
-    stars() {
+    stelle() {
       let stelle = [];
       for (let i = 0; i < 5; i++) {
         if (i < Math.round(this.info.vote_average / 2)) {
@@ -59,11 +77,11 @@ export default {
     <h5 class="card-title">{{ title(info) }}</h5>
     <p class="card-text">Titolo Originale: {{  originalTitle(info) }}</p>
     <p class="card-text">Voto:  
-      <i v-for="n in stelle" class="fa-solid fa-star"></i>
-      <i v-for="n in stelle" class="fa-regular fa-star"></i>
+      <i v-for="star in stelle" class="fa-solid fa-star"></i>
+      <i v-for="star in stelle" class="fa-regular fa-star"></i>
     </p>
     <p class="card-text">Lingua: {{ info.original_language }}</p>
-    <img :src="`https://www.countryflagicons.com/FLAT/64/${(info.original_language).toUpperCase()}.png`">
+    <img :src="`https://www.countryflagicons.com/FLAT/64/${Flags(info)}.png`">
   </div>
 </div>
 </template>
