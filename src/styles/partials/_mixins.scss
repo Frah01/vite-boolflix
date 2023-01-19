@@ -1,10 +1,10 @@
 @mixin input-search {
     width: 100px;
-    border: 1px solid rgba(255, 251, 251, 0.2);
+    border: 1px solid rgba(255, 251, 251, 0.4);
     padding: 1px;
     color: white;
     background-color: black;
-    transition: 1s ease-out;
+    transition: 0.7s ease-in-out;
 
     &:focus {
         width: 200px;

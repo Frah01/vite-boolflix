@@ -42,7 +42,8 @@ export default {
                         </div>
                         <div class=" my-3">
                             <input type="text" class="input-search" placeholder="Film, serie" aria-label="Film, serie" v-model="inputText" @keyup.enter="search(inputText)">
-                            <button class="btn" type="button" @click="search(inputText)"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <button class="btn" type="button" @click="search(inputText)"><i class="fa-solid fa-magnifying-glass mx-1"></i></button>
+                            <i class="fa-solid fa-bell text-white mx-1"></i>
                         </div>
                     </div>
                 </div>
@@ -58,6 +59,10 @@ export default {
 
     .fa-magnifying-glass{
         color: white;
+    }
+
+    .fa-bell {
+        cursor: pointer;
     }
 
     .titolo{
