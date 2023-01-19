@@ -18,9 +18,12 @@ export default {
 </script>
 <template lang="">
     <div class="main-container my-4">
-        <div class=" Categoria  mb-5 text-white">
+        <div class="  mb-5 ">
                     <!-- {{ store.movieArray.length }} Risultati -->
-                    <h3>Film e Serie Tv</h3>
+                    <div class="categoria text-white">
+                        <h3 >Film e Serie Tv</h3>
+                    </div>
+                    
                 </div>
                 <div class=" cards-of row row-cols-5 flex-nowrap mt-5">
                     <AppCard v-for="(item, index) in store.movieArray" :key="index" :info="item" />
@@ -30,6 +33,11 @@ export default {
 <style lang="scss" scoped>
 .main-container{
     width: 100%;
+    margin: 0 auto;
+}
+
+.categoria{
+    width: 95%;
     margin: 0 auto;
 }
 .cards-of{
