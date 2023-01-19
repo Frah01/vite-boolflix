@@ -19,11 +19,11 @@ export default {
     },
       title(value){
         if(value.media_type == 'tv'){
-          return `Serie Tv: ${value.name}.`
+          return `${value.name}`
 
         }
         else if(value.media_type == 'movie'){
-          return `Film: ${value.title}.`
+          return `${value.title}`
         }
         else{
           return `Title Undefined`
@@ -75,7 +75,6 @@ export default {
    <div class="cards" @mouseenter="hover = true" @mouseleave="hover = false"><img class="copertina"  :src="Image(info)" :alt="title(info)"/>
     <div class="info" v-if="hover">
       <h5 class="card-title">{{ title(info) }}</h5>
-      <p class="card-text">Titolo Originale: {{  originalTitle(info) }}</p>
     <p class="card-text">Voto:  
       <i v-for="star in stelle" class="fa-solid fa-star stars-color"></i>
       <i v-for="star in stelleVuote" class="fa-regular fa-star stars-empty-color"></i>
@@ -84,7 +83,7 @@ export default {
     
     </p>
     <!-- <img class="language"  :alt="`${info.original_language}`" :src="`https://unpkg.com/language-icons/icons/${info.original_language}.svg`"> -->
-    <p class="card-text">Overview: {{ overview() }}</p>
+    <p class="card-text">{{ overview() }}</p>
     </div>
   </div>
 <!-- <div class="card-container"  >
