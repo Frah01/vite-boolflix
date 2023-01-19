@@ -4,6 +4,11 @@ export default {
     props: {
         info: Object,
     },
+    data(){
+      return{
+        hover : false
+      }
+    },
     methods: {
       overview(){
       if (this.info.overview.length > 100){
@@ -67,18 +72,21 @@ export default {
 </script>
 
 <template lang="">
-<div class="card-container" >
+<div class="card-container" @mouseenter="hover = true" @mouseleave="hover = false" >
   <img class="card-img" :src="Image(info)" :alt="title(info)">
-  <div class="card-body">
+  <div class="card-body" v-if="hover">
     <h5 class="card-title">{{ title(info) }}</h5>
     <p class="card-text">Titolo Originale: {{  originalTitle(info) }}</p>
     <p class="card-text">Voto:  
       <i v-for="star in stelle" class="fa-solid fa-star stars-color"></i>
       <i v-for="star in stelleVuote" class="fa-regular fa-star stars-empty-color"></i>
     </p>
-    <p class="card-text">Lingua: {{ info.original_language.toUpperCase() }}</p>
-    <p class="card-text">Overview: {{ overview() }}</p>
+    <p 
+    class="card-text d-flex">Lingua: {{ info.original_language.toUpperCase() }}
     <img class="language"  :alt="`${info.original_language}`" :src="`https://unpkg.com/language-icons/icons/${info.original_language}.svg`">
+    </p>
+    <p class="card-text">Overview: {{ overview() }}</p>
+    
   </div>
 </div>
 </template>
@@ -89,10 +97,26 @@ export default {
  .card-container{
   min-width: 300px;
   padding: 1px;
+  position: relative;
   .card-body{
-    padding: 20px;
-    height: 100%;
-    display: none;
+      padding: 20px;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: white;
+      background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    }
+    
+    .language{
+      margin-left: 1em;
+      display: block;
+      width: 30px;
+    }
+    
   }
   .stars-color {
     color: orange;
@@ -105,22 +129,4 @@ export default {
   .card-img {
     min-width: 100%;
   }
-
-  &:hover{
-    .card-body{
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      color: white;
-    }
-    img{
-      display: none;
-    }
-
-    .language{
-      display: block;
-      width: 50px
-    }
-  }
- }
 </style>

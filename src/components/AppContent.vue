@@ -18,7 +18,7 @@ export default {
 </script>
 <template lang="">
     <div class="main-container my-4">
-        <div class="mb-5 text-white">
+        <div class=" Categoria  mb-5 text-white">
                     <!-- {{ store.movieArray.length }} Risultati -->
                     <h3>Film e Serie Tv</h3>
                 </div>
@@ -34,7 +34,8 @@ export default {
 }
 .cards-of{
     overflow-x: auto;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
 
 &::-webkit-scrollbar-track{   
     
