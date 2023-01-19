@@ -23,7 +23,6 @@ export default {
                     <div class="categoria text-white">
                         <h3 >Film e Serie Tv</h3>
                     </div>
-                    
                 </div>
                 <div class=" cards-of row row-cols-5 flex-nowrap mt-5">
                     <AppCard v-for="(item, index) in store.movieArray" :key="index" :info="item" />
@@ -65,7 +64,7 @@ export default {
 
 	border-radius: 10px;
 	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #D62929;
+	background-color: #424242;
 }
 }
 

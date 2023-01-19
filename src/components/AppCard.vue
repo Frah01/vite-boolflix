@@ -143,6 +143,7 @@ export default {
   }
 
   .cards {
+  margin-right: 10px;
   width: 305px;
   height: 500px;
   padding: 1.5rem;
