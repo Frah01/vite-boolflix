@@ -87,6 +87,7 @@ export default {
 
 @use '../styles/general.scss' as*;
  .card-container{
+  min-width: 300px;
   padding: 1px;
   .card-body{
     padding: 20px;
@@ -102,12 +103,14 @@ export default {
   }
 
   .card-img {
-    width: 100%;
+    min-width: 100%;
   }
 
   &:hover{
     .card-body{
-      display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       color: white;
     }
     img{

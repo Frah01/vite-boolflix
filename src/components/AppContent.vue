@@ -29,11 +29,12 @@ export default {
 </template>
 <style lang="scss" scoped>
 .main-container{
-    width: 98%;
+    width: 100%;
     margin: 0 auto;
 }
 .cards-of{
     overflow-x: auto;
+    width: 100%;
 
 &::-webkit-scrollbar-track{   
     
