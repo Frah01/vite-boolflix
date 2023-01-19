@@ -108,7 +108,6 @@ export default {
   &:hover{
     .card-body{
       display: block;
-      background-color: rgba(0,0,0,);
       color: white;
     }
     img{

@@ -25,6 +25,20 @@ export default {
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="titolo">
                             <h3>BOOLFLIX</h3>
+                            <ul>
+                                <li>
+                                    <a href="">Home</a>
+                                </li>
+                                <li>
+                                    <a href="">Serie Tv</a>
+                                </li>
+                                <li>
+                                    <a href="">Film</a>
+                                </li>
+                                <li>
+                                    <a href="">Nuove Uscite</a>
+                                </li>
+                            </ul>
                         </div>
                         <div class=" my-3">
                             <input type="text" class="input-search" placeholder="Film, serie" aria-label="Film, serie" v-model="inputText" @keyup.enter="search(inputText)">
@@ -47,9 +61,29 @@ export default {
     }
 
     .titolo{
+        height: 100%;
         color: red;
+        display: flex;
+        align-items: center;
         h3{
             margin-bottom: 0;
+        }
+        ul{
+            list-style-type: none;
+            display: flex;
+            margin-bottom: 0;
+            padding: 0;
+            
+            li{
+                margin-left: 20px;
+                a{
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+            }
+               
+            }
+
+           
         }
     }
 
