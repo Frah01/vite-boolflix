@@ -15,8 +15,13 @@ export default {
 }
 </script>
 <template lang="">
-   <AppSearch />
+    <header>
+        <AppSearch />
+    </header>
 </template>
-<style lang="">
-    
+<style lang="scss">
+    header{
+        width: 100%;
+        height: 100px;
+    } 
 </style>

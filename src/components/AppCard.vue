@@ -5,6 +5,13 @@ export default {
         info: Object,
     },
     methods: {
+      overview(){
+      if (this.info.overview.length > 100){
+        this.info.overview = this.info.overview.substring(0,100) + '...'
+        return this.info.overview
+      }
+      return this.info.overview
+    },
       title(value){
         if(value.media_type == 'tv'){
           return `Serie Tv: ${value.name}.`
@@ -54,6 +61,7 @@ export default {
       }
       return stelleVuote;
     },
+   
   }
 }
 </script>
@@ -69,7 +77,7 @@ export default {
       <i v-for="star in stelleVuote" class="fa-regular fa-star stars-empty-color"></i>
     </p>
     <p class="card-text">Lingua: {{ info.original_language.toUpperCase() }}</p>
-    <p class="card-text">Overview: {{ info.overview }}</p>
+    <p class="card-text">Overview: {{ overview() }}</p>
     <img class="language"  :alt="`${info.original_language}`" :src="`https://unpkg.com/language-icons/icons/${info.original_language}.svg`">
   </div>
 </div>
@@ -79,7 +87,6 @@ export default {
 
 @use '../styles/general.scss' as*;
  .card-container{
-  background-color: white;
   padding: 1px;
   .card-body{
     padding: 20px;
