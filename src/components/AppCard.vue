@@ -144,7 +144,7 @@ export default {
 
   .cards {
   width: 305px;
-  height: 420px;
+  height: 500px;
   padding: 1.5rem;
   background: white;
   position: relative;
