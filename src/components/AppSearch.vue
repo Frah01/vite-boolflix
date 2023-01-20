@@ -26,17 +26,21 @@ export default {
                         <div class="titolo">
                             <h3>BOOLFLIX</h3>
                             <ul>
-                                <li>
+                                <li >
                                     <a href="">Home</a>
+                                    <div class="selezione" ></div>
                                 </li>
                                 <li>
                                     <a href="">Serie Tv</a>
+                                    <div class="selezione" ></div>
                                 </li>
                                 <li>
                                     <a href="">Film</a>
+                                    <div class="selezione" ></div>
                                 </li>
                                 <li>
                                     <a href="">Nuove Uscite</a>
+                                    <div class="selezione" ></div>
                                 </li>
                             </ul>
                         </div>
@@ -63,6 +67,24 @@ export default {
 
     .fa-bell {
         cursor: pointer;
+    }
+
+    .selezione {
+        width: 1%;
+        height: 5px;
+        margin: 0 auto;
+        transition: 0.3s ease-in-out;
+        
+    }
+
+    li:hover .selezione{
+        width: 60%;
+        height: 3px;
+        background-color: red;
+        border-radius: 1px;
+    }
+    li:focus .selezione{
+        width: 30px;
     }
 
     .titolo{
