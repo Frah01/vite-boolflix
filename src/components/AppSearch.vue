@@ -45,9 +45,10 @@ export default {
                             </ul>
                         </div>
                         <div class=" my-3">
-                            <input type="text" class="input-search" placeholder="Film, serie" aria-label="Film, serie" v-model="inputText" @keyup.enter="search(inputText)">
-                            <button class="btn" type="button" @click="search(inputText)"><i class="fa-solid fa-magnifying-glass mx-1"></i></button>
-                            <i class="fa-solid fa-bell text-white mx-1"></i>
+                            <div class="search-box">
+                                <button class="btnn-search"  @click="search(inputText)"><i class="fas fa-search"></i></button>
+                                <input type="text" class="input-search" placeholder="Film, serie" aria-label="Film, serie" v-model="inputText" @keyup.enter="search(inputText)">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,4 +119,59 @@ export default {
         width: 97%;
         margin: 0 auto;
     }
+
+
+    .search-box{
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.input-search{
+  height: 40px;
+  width: 40px;
+  border-style: none;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+  padding-right: 40px;
+  color:#fff;
+}
+.input-search::placeholder{
+  color:rgba(255,255,255,.5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btnn-search{
+  width: 40px;
+  height: 40px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color:#ffffff ;
+  background-color:transparent;
+  pointer-events: painted;  
+}
+.btnn-search:focus ~ .input-search{
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+.input-search:focus{
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
 </style>
